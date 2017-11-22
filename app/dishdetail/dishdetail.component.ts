@@ -10,7 +10,7 @@ import 'rxjs/add/operator/switchMap';
 	selector: 'app-dishdetail', 
 	moduleId: module.id,
 	templateUrl: './dishdetail.component.html'
-//where we would specify the scss class
+	//where we would specify the scss class
 })
 	
 export class DishdetailComponent implements OnInit {

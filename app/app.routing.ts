@@ -8,7 +8,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
 const routes: Routes = [
     { path: "", redirectTo: "/menu", pathMatch: "full" },
     { path: "menu", component: MenuComponent },
-    { path: 'dishddetail/:id', component: DishdetailComponent},
+    { path: 'dishdetail/:id', component: DishdetailComponent},
 ];
 
 @NgModule({
