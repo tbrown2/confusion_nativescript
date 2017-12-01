@@ -1,7 +1,7 @@
-import { Component, OnInit, Inject} from '@angular/core';
+import { Component, OnInit, Inject, ChangeDetectorRef} from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
-
+import {DrawerPage} from '../shared/drawer/drawer.page';
 @Component ({
 	selector: 'app-menu', 
 	moduleId: module.id,
@@ -9,13 +9,16 @@ import { DishService } from '../services/dish.service';
 //where we would specify the scss class
 })
 	
-export class MenuComponent implements OnInit {
+export class MenuComponent extends DrawerPage implements OnInit {
 
 	dishes: Dish[];
 	errMess: string;
 
 	constructor(private dishservice: DishService,
-		@Inject('BaseURL') private BaseURL) { }
+		private changeDetectorRef: ChangeDetectorRef,
+		@Inject('BaseURL') private BaseURL) { 
+			super(changeDetectorRef);
+	}
 
 	ngOnInit() {
 		this.dishservice.getDishes()

@@ -4,6 +4,7 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
 
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
+import { DrawerComponent } from "./shared/drawer/drawer.component";
 
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
@@ -12,6 +13,7 @@ import { DishService } from "./services/dish.service";
 import { ProcessHTTPMsgService } from "./services/process-httpmsg.service";
 
 import {baseURL } from './shared/baseurl';
+import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedrawer/angular';
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
@@ -25,13 +27,15 @@ import {baseURL } from './shared/baseurl';
     imports: [
         NativeScriptModule,
         AppRoutingModule,
-        NativeScriptHttpModule
+        NativeScriptHttpModule,
+        NativeScriptUISideDrawerModule
 
     ],
     declarations: [
         AppComponent,
         MenuComponent,
-        DishdetailComponent
+        DishdetailComponent,
+        DrawerComponent
     ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},
