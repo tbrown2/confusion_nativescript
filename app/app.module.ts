@@ -18,6 +18,7 @@ import { LeaderService } from './services/leader.service';
 import { ProcessHTTPMsgService } from "./services/process-httpmsg.service";
 
 import {baseURL } from './shared/baseurl';
+import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedrawer/angular';
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -33,7 +34,10 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedraw
         NativeScriptModule,
         AppRoutingModule,
         NativeScriptHttpModule,
-        NativeScriptUISideDrawerModule
+        NativeScriptUISideDrawerModule,
+        TNSFontIconModule.forRoot({
+            'fa': './fonts/font-awesome.min.css'
+        }),
 
     ],
     declarations: [

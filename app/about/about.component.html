@@ -32,7 +32,7 @@
           </ng-template>
       </ListView>
       <ActivityIndicator busy="true"  *ngIf="!(leaders || errMess)" width="50" height="50" class="activity-indicator"></ActivityIndicator>
-                <Label *ngIf="errMess" [text]="'Error: ' + errMess"></Label>
+       <Label *ngIf="errMess" [text]="'Error: ' + errMess"></Label>
 
 	</StackLayout>
 </RadSideDrawer>
