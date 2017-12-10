@@ -7,7 +7,9 @@ import { AppComponent } from "./app.component";
 import { DrawerComponent } from "./shared/drawer/drawer.component";
 
 import { MenuComponent } from './menu/menu.component';
+import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 import { DishService } from "./services/dish.service";
@@ -36,10 +38,12 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedraw
     ],
     declarations: [
         AppComponent,
+        ContactComponent,
         MenuComponent,
         DishdetailComponent,
         DrawerComponent,
-        HomeComponent
+        HomeComponent,
+        AboutComponent
     ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},

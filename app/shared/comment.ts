@@ -1,4 +1,5 @@
-//stores commments for each dish 
+
+//stors commments for each dish 
 export interface Comment {
 	rating: number;
 	comment: string;
