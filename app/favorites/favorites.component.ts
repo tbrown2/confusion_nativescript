@@ -5,6 +5,8 @@ import { ListViewEventData, RadListView } from 'nativescript-telerik-ui/listview
 import { RadListViewComponent } from 'nativescript-telerik-ui/listview/angular';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
 import { DrawerPage } from '../shared/drawer/drawer.page';
+import { View } from 'ui/core/view';
+
 @Component({
     selector: 'app-favorites',
     moduleId: module.id,
@@ -58,14 +60,14 @@ export class FavoritesComponent extends DrawerPage implements OnInit {
         var swipeLimits = args.data.swipeLimits;
         var swipeView = args['object'];
 
-        var leftItem = swipeView.getViewById('mark-view');
-        var rightItem = swipeView.getViewById('delete-view');
+        var leftItem = swipeView.getViewById<View>('mark-view');
+        var rightItem = swipeView.getViewById<View>('delete-view');
         //gives width to the left and right button
         //if you do a swipe that exceeds the limit, then the option button will appear 
         //it will stick for the user to interact with 
-        //swipeLimits.left = leftItem.getMeasuredWidth();
-        //swipeLimits.right = rightItem.getMeasuredWidth();
-        //swipeLimits.threshold = leftItem.getMeasuredWidth()/2;
+        swipeLimits.left = leftItem.getMeasuredWidth();
+        swipeLimits.right = rightItem.getMeasuredWidth();
+        swipeLimits.threshold = leftItem.getMeasuredWidth()/2;
     }
 
     public onSwipeCellFinished(args: ListViewEventData) {
