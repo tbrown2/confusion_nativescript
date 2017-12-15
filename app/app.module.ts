@@ -1,7 +1,8 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
-
+import { NativeScriptFormsModule } from 'nativescript-angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { DrawerComponent } from "./shared/drawer/drawer.component";
@@ -12,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 import { DishService } from "./services/dish.service";
 import { PromotionService } from './services/promotion.service';
@@ -41,6 +43,8 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedraw
             'fa': './fonts/font-awesome.min.css'
         }),
         NativeScriptUIListViewModule,
+        NativeScriptFormsModule,
+        ReactiveFormsModule
 
     ],
     declarations: [
@@ -51,7 +55,8 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedraw
         DrawerComponent,
         HomeComponent,
         AboutComponent,
-        FavoritesComponent
+        FavoritesComponent,
+        ReservationComponent
     ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},
