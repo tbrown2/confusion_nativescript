@@ -14,6 +14,7 @@ import { AboutComponent } from './about/about.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationModalComponent } from "./reservationmodal/reservationmodal.component";
 
 import { DishService } from "./services/dish.service";
 import { PromotionService } from './services/promotion.service';
@@ -56,7 +57,8 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedraw
         HomeComponent,
         AboutComponent,
         FavoritesComponent,
-        ReservationComponent
+        ReservationComponent,
+        ReservationModalComponent
     ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},
@@ -68,7 +70,10 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedraw
     ],
     schemas: [
         NO_ERRORS_SCHEMA
-    ]
+    ],
+    entryComponents: [
+        ReservationModalComponent
+    ],
 })
 /*
 Pass your application module to the bootstrapModule function located in main.ts to start your app
