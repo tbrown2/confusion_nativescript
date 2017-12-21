@@ -21,7 +21,7 @@ import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
 import { ProcessHTTPMsgService } from "./services/process-httpmsg.service";
 import { FavoriteService } from './services/favorite.service';
-
+import { CouchbaseService } from './services/couchbase.service';
 import {baseURL } from './shared/baseurl';
 import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedrawer/angular';
@@ -66,7 +66,8 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedraw
         ProcessHTTPMsgService,
         PromotionService,
         LeaderService,
-        FavoriteService
+        FavoriteService,
+        CouchbaseService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
