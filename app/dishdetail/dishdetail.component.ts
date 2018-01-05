@@ -8,6 +8,9 @@ import 'rxjs/add/operator/switchMap';
 import { FavoriteService } from '../services/favorite.service';
 import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 import { Toasty } from 'nativescript-toasty';
+import * as SocialShare from "nativescript-social-share";
+import { ImageSource, fromUrl } from "image-source";
+import * as dialogs from "ui/dialogs";
 
 //animation imports 
 import { Page } from "ui/page";
@@ -141,6 +144,22 @@ export class DishdetailComponent implements OnInit {
 
 	}
 
+	
+
+
+	socialShare() {
+	    let image: ImageSource;
+
+	    fromUrl(this.BaseURL + this.dish.image)
+	     .then((img: ImageSource) => {
+	       image = img; 
+	        SocialShare.shareImage(image, "How would you like to share this image?")
+	      })
+	     .catch(()=> { console.log('Error loading image'); });
+
+	  }
+
+
 	animateDown(){
 		let definitions = new Array<AnimationDefinition>();
 	    let a1: AnimationDefinition = {
@@ -168,6 +187,29 @@ export class DishdetailComponent implements OnInit {
 	    .catch((e) => {
 	        console.log(e.message);
 	    });
+	}
+
+	displayActionDialog() {
+		let options = {
+			title: "Actions",
+			message: "Choose your Action",
+			cancelButtonText: "Cancel",
+			actions: ["Add to Favorites", "Add Comment"]
+		};
+
+		dialogs.action(options).then((result) => {
+			if(result === 'Add to Favorites') {
+				this.addToFavorites();
+			}
+
+			else if (result === 'Add Comment') {
+				this.openCommentForm();
+			}
+		});	
+	}
+
+	openCommentForm() {
+
 	}
 
 	
