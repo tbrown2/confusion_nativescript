@@ -194,7 +194,7 @@ export class DishdetailComponent implements OnInit {
 			title: "Actions",
 			message: "Choose your Action",
 			cancelButtonText: "Cancel",
-			actions: ["Add to Favorites", "Add Comment"]
+			actions: ["Add to Favorites", "Add Comment", "Social Sharing"]
 		};
 
 		dialogs.action(options).then((result) => {
@@ -205,6 +205,11 @@ export class DishdetailComponent implements OnInit {
 			else if (result === 'Add Comment') {
 				this.openCommentForm();
 			}
+			
+			else if (result === 'Social Sharing') {
+              this.socialShare();
+            }
+
 		});	
 	}
 

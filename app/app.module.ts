@@ -6,16 +6,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { DrawerComponent } from "./shared/drawer/drawer.component";
-import { NativeScriptUIListViewModule } from 'nativescript-telerik-ui/listview/angular';
+import { NativeScriptUIListViewModule } from 'nativescript-pro-ui/listview/angular';
 import { MenuComponent } from './menu/menu.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { UserAuthComponent } from './userauth/userauth.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ReservationModalComponent } from "./reservationmodal/reservationmodal.component";
-
+import { CommentModalComponent } from "./commentmodal/commentmodal.component";
 import { DishService } from "./services/dish.service";
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
@@ -24,7 +25,7 @@ import { FavoriteService } from './services/favorite.service';
 import { CouchbaseService } from './services/couchbase.service';
 import {baseURL } from './shared/baseurl';
 import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
-import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedrawer/angular';
+import { NativeScriptUISideDrawerModule } from 'nativescript-pro-ui/sidedrawer/angular';
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
@@ -58,7 +59,9 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedraw
         AboutComponent,
         FavoritesComponent,
         ReservationComponent,
-        ReservationModalComponent
+        ReservationModalComponent,
+        CommentModalComponent,
+        UserAuthComponent
     ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},
@@ -73,7 +76,8 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-telerik-ui/sidedraw
         NO_ERRORS_SCHEMA
     ],
     entryComponents: [
-        ReservationModalComponent
+        ReservationModalComponent,
+        CommentModalComponent
     ],
 })
 /*
