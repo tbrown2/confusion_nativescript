@@ -20,6 +20,8 @@ import { CommentModalComponent } from "./commentmodal/commentmodal.component";
 import { DishService } from "./services/dish.service";
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+import { PlatformService } from './services/platform.service';
+
 import { ProcessHTTPMsgService } from "./services/process-httpmsg.service";
 import { FavoriteService } from './services/favorite.service';
 import { CouchbaseService } from './services/couchbase.service';
@@ -70,7 +72,8 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-pro-ui/sidedrawer/a
         PromotionService,
         LeaderService,
         FavoriteService,
-        CouchbaseService
+        CouchbaseService,
+        PlatformService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
